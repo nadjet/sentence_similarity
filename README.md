@@ -1,4 +1,4 @@
-# Sentence Similarity with Word Embeddings Pooling vs Sentence Transformers Embeddings
+# Sentence Similarity with Bert vs SBert
 
 
 ## Motivation
