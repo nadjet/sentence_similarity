@@ -1,4 +1,4 @@
-# Sentence Similarity with Bert Word vs Sentence Embeddings
+# Sentence Similarity with Word Embeddings Pooling vs Sentence Transformers Embeddings
 
 
 ## Motivation
@@ -7,7 +7,7 @@ We can compute the similarity between two sentences by calculating the similarit
 
 A popular approach is to perform the mean or max averaging of the sentence word embeddings. In the case of Bert, another pooling technique is to use the [CLS] or [SEP] token embedding. [Bert-as-a-service](https://github.com/hanxiao/bert-as-service) provides just the API to perform this kind of sentence encoding.
 
-A more elaborate approach is proposed with [SBert](https://github.com/UKPLab/sentence-transformers), aka Sentence Bert. SBert is a siamese architecture in which pairs of sentence embeddings are weighted in conjunction according to a classification task such as sentence similarity. The resulting pretrained models provide meaningful dense vector representations for sentences according to the specific task they were fine-tuned on. This approach was shown to be faster and more performant than plain pooling of sentence word embeddings.
+A more elaborate approach is proposed with [SBert](https://github.com/UKPLab/sentence-transformers), aka Sentence Bert. SBert is a siamese architecture in which pairs of sentence embeddings, obtained as above given a Bert or another transformer model, are weighted in conjunction according to a classification task such as sentence similarity. The resulting pretrained models provide meaningful dense vector representations for sentences according to the specific task they were fine-tuned on. This approach was shown to be faster and more performant than plain pooling of sentence word embeddings.
 
 In this code I compute the similarity between a set of queries and a set of sentences, outputing the top k most similar sentences to each query. I do so with Bert-as-service on the one hand and SBert on the other hand, so as to compare the outputs and execution times.
 
