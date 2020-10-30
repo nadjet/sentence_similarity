@@ -11,6 +11,8 @@ A more elaborate approach is proposed with [SBert](https://github.com/UKPLab/sen
 
 In this code I compute the similarity between a set of queries and a set of sentences, outputing the top k most similar sentences to each query. I do so with Bert-as-service on the one hand and SBert on the other hand, so as to compare the outputs and execution times.
 
+For [SBert](https://www.sbert.net/), a Semantic Textual Similarity (STS) model trained given the architecture described above is used for encoding each sentence.
+
 Because of confidentiality issues, I do not provide the example texts, but I do include a brief summary of my results. I invite you to test the code with your own data.
 
 ## Getting started

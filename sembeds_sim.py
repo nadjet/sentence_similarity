@@ -14,7 +14,7 @@ import plac
   queries_file="Text file in which sentences for which to find top 5 most similar sentences are stored, one per line",
   output_file="Output csv file containing query, sentence and score"
   )
-def main(sentences_file, queries_file, output_file):
+def main(sentences_file, queries_file, output_file, threshold=0.8):
 
   start = time.time()
 
@@ -40,7 +40,7 @@ def main(sentences_file, queries_file, output_file):
   data = []
   for query in queries:
       query_embeddings = embedder.encode(query, convert_to_tensor=True)
-      top_k_list = get_query_top_k(query,query_embeddings, corpus, corpus_embeddings, max_n = n, top_k = top_k)
+      top_k_list = get_query_top_k(query,query_embeddings, corpus, corpus_embeddings, max_n = n, top_k = top_k, min_p=threshold)
       data.extend(top_k_list)
   df = pd.DataFrame(data)
   df.to_csv(output_file,index=False,sep="\t")
