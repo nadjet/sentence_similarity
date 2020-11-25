@@ -36,7 +36,11 @@ Both similarity programs take 3 arguments as input:
 2. A text file containing the queries for which we want to find the most similar sentences.
 3. The output csv file that stores `<query,sentence,score>`.
 
-We use Bert-as-service default which uses average mean pooling to encode sentences. Both programs use the cosine similarity metric and output the top 5 most similar sentences for each query.
+We use Bert-as-service default which uses average mean pooling to encode sentences. 
+
+For S-BERT we set a similarity threshold (default=0.8) and use a flag to specify whether to consider exact match or not (default=True). The model we use is `distilbert-base-nli-stsb-mean-tokens` which is for semantic text similarity. Other [models](https://www.sbert.net/docs/pretrained_models.html#choosing-the-right-model) are available for different tasks, such as a pretrained model for question duplication.
+
+Both programs use the cosine similarity metric and output the top 5 most similar sentences for each query.
 
 ## Results
 
