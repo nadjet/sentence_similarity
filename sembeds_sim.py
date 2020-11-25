@@ -32,8 +32,8 @@ def main(sentences_file, queries_file, output_file, threshold=0.8):
   corpus_embeddings = embedder.encode(corpus, convert_to_tensor=True)
 
   # Find the closest 5 sentences of the corpus for each query sentence based on cosine similarity
-  n = 4
-  top_k = 2
+  n = 10
+  top_k = 5
 
   logger.info("Computing top {} similar sentences to each of {} queries...".format(top_k,len(queries)))
 
